@@ -1,0 +1,29 @@
+
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+    {% if error %}
+    {{ error }}
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>LOGIN HERE</h2>
+    <br>
+    <br>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        USER_NAME:
+        <input type="text" name ="username">
+        <br>
+        <br>
+        PASSWORD:
+        <input type="password" name ="password">
+        <br>
+        <br>
+        <input class="btn btn-primary" type="submit" value="LOGIN">
+    </form>
+</div>
+{%endblock%}
